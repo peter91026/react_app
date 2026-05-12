@@ -15,7 +15,7 @@
 
 * **前端開發 (Frontend)**: 採用 **React.js** 框架建置響應式網頁介面，確保使用者在各類行動裝置上皆能獲得一致的導覽體驗。
 * **後端開發 (Backend)**: 以 **Python** 結合 **Flask** 框架建置微服務 API，負責處理核心業務邏輯與資料串接。
-* **資料庫 (Database)**: 使用 **Firebase Firestore (NoSQL)** 存儲高併發的打卡資訊與藝術品屬性資料。
+* **資料庫 (Database)**: 使用 **Firebase Firestore (NoSQL)** 統一管理打卡資訊與藝術品屬性資料。
 * **系統整合 (Integration)**: 
     * **臺北通 (Taipei Pass)**: 整合臺北通帳號體系，提供無縫登入與身份驗證。
     * **公開資料 (Open Data)**: 自動化串接臺北市公共藝術公開資料集。
