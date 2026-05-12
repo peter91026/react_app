@@ -1,71 +1,57 @@
+# 臺北公共裝置藝術推廣打卡微服務
+**2024 臺北秋季程式設計節 - 城市通微服務大黑客松**
 
-# Getting Started with Create React App
+## 💡 專案構想與目標
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+臺北市擁有豐富且多樣的公共裝置藝術，但許多作品往往不為人知。本專案旨在透過創新的微服務，利用政府公開資料集整合臺北市公共藝術資訊，提升這些作品的能見度與互動性，並推廣城市文化觀光。
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🏗️ 技術架構 (Technical Architecture)
 
-### `npm start`
+本系統採前後端分離架構，整合第三方認證與政府開放資料，確保服務的穩定性與擴充性。
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* **前端開發 (Frontend)**: 採用 **React.js** 框架建置響應式網頁介面，確保使用者在各類行動裝置上皆能獲得一致的導覽體驗。
+* **後端開發 (Backend)**: 以 **Python** 結合 **Flask** 框架建置微服務 API，負責處理核心業務邏輯與資料串接。
+* **資料庫 (Database)**: 使用 **Firebase Firestore (NoSQL)** 存儲高併發的打卡資訊與藝術品屬性資料。
+* **系統整合 (Integration)**: 
+    * **臺北通 (Taipei Pass)**: 整合臺北通帳號體系，提供無縫登入與身份驗證。
+    * **公開資料 (Open Data)**: 自動化串接臺北市公共藝術公開資料集。
+* **部署環境 (Infrastructure)**: 託管於 **Firebase Hosting**，並透過 GitHub Actions 進行持續整合與部署。
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠️ 核心功能 (解決方案)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+本專案建立一個現代化的微服務。使用者可以透過登入智慧型手機上的「台北通 App」，享受以下關鍵功能：
 
-### `npm run build`
+* 📍 **GPS地圖導覽** : 地圖上標示所有公共藝術裝置的位置，並提供導航功能，引導使用者前往。
+* 📖 **作品深度介紹** : 每個藝術裝置都有一個詳細的資訊頁面，包含豐富的圖片、創作者資訊、設計理念、背後故事等，讓使用者更深入了解作品。
+* 📸 **社群互動打卡** : 使用者到達藝術裝置現場後，可以進行虛擬打卡，並分享照片與體驗至社群媒體。
+* 🎁 **點數獎勵機制** : 鼓勵使用者造訪更多藝術裝置，每次打卡皆可累積點數。點數可兌換在地商圈折價券、文化體驗活動、甚至是限定紀念品。
+* 🤝 **與臺北通 App 整合** : 使用者可使用其臺北通帳號直接登入微服務，享受無縫且便捷的使用體驗，無需額外註冊。
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📈 預期效益
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+此微服務的推出將預期達成以下目標：
 
-### `npm run eject`
+* **提升公共藝術能見度** : 讓更多市民與遊客發現並造訪臺北市的公共藝術作品。
+* **活絡周邊商圈** : 打卡活動將引導人流至藝術裝置所在的區域，帶動周邊商圈的消費。
+* **推廣城市文化** : 透過深度介紹，傳遞臺北市的文化底蘊與藝術氣息。
+* **增加臺北通 App 活躍度** : 與臺北通 App 整合，為其使用者提供更多實用的服務，增加 App 的黏著度。
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📱 專案畫面展示
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+以下圖片展示微服務的關鍵功能，包括 GPS 地圖導覽、藝術品詳細資訊、社群打卡與分享，以及點數獎勵機制，並與臺北通 App 的無縫整合。
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+| 台北通虛擬機 | 微服務首頁 |
+| :---: | :---: |
+| <img width="250" alt="台北通虛擬機" src="https://github.com/user-attachments/assets/bf11b2fc-29af-4aa1-a6c8-065ac29405b1" /> | <img width="250" alt="微服務首頁" src="https://github.com/user-attachments/assets/70f4adf0-0185-409c-bc33-9fdfb2e12d1d" /> |
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| 台北市公共藝術 GPS地圖 | 打卡資訊區 | 公共藝術資訊區 |
+| :---: | :---: | :---: |
+| <img width="250" alt="GPS地圖" src="https://github.com/user-attachments/assets/2db108c7-aba5-4e0c-8eb5-48cea18e246a" /> | <img width="250" alt="打卡資訊區" src="https://github.com/user-attachments/assets/f899177f-e161-4f04-a751-87af236aec51" /> | <img width="250" alt="公共藝術資訊區" src="https://github.com/user-attachments/assets/81a23a8e-614a-415f-8a9a-d4a8b642ac4b" /> |
