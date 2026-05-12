@@ -4,16 +4,16 @@ from datetime import datetime
 from flask import Flask, request, jsonify
 
 # 初始化 Firebase
-cred = credentials.Certificate('townpass-20d9f-firebase-adminsdk-r8k3s-9e1173e9a9.json')  # 替换为你的 Firebase Admin SDK JSON 文件路径
+cred = credentials.Certificate('townpass-20d9f-firebase-adminsdk-r8k3s-9e1173e9a9.json')  
 firebase_admin.initialize_app(cred, {
-    'databaseURL': 'https://townpass-20d9f-default-rtdb.firebaseio.com/'  # 替换为你的 Firebase 数据库 URL
+    'databaseURL': 'https://townpass-20d9f-default-rtdb.firebaseio.com/'  
 })
 
 app = Flask(__name__)
 
 @app.route('/add_art', methods=['POST'])
 def add_art():
-    data = request.json  # 获取请求中的 JSON 数据
+    data = request.json  
     if not data:
         return jsonify({'error': 'No data provided'}), 400
     
@@ -36,12 +36,12 @@ def add_art():
     user_ref = db.reference(f'Users/{user_id}')
     existing_data = user_ref.get()
     if existing_data is None:
-        # user_id 不存在，创建新的 user_id 节点并存储数据
-        user_ref.set({})  # 仅初始化 user_id 节点
+        
+        user_ref.set({})  # 初始化 user_id 
         user_ref.child('data').push(art_data)  # 使用 push 添加新数据到 data 列表中
         message = f"User {user_id} created successfully with data: {art_data}!"
     else:
-        # user_id 已存在，直接在该节点下插入数据
+        # user_id 已存在，直接在該節點下插入数据
         user_ref.child('data').push(art_data)  # 使用 push 添加新数据到 data 列表中
         message = f"User {user_id} created successfully with data: {art_data}!"
 
@@ -56,10 +56,10 @@ def get_art():
     user_ref = db.reference(f'Users/{user_id}')
     existing_data = user_ref.get()
     if existing_data is None:
-        # 用户不存在，不返回数据
+        # 用戶不存在，不回傳資料
         return jsonify('NoRecord'), 200
     
-    # 用户存在，返回数据
+    # 用戶存在，回傳資料
     data = existing_data.get('data', [])
     return jsonify(data), 200
    
